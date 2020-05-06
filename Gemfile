@@ -48,6 +48,7 @@ group :development, :test do
   gem 'capistrano-rbenv'
   gem 'capistrano3-puma'
   gem 'ed25519', '>= 1.2', '< 2.0'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -83,8 +84,8 @@ gem 'kaminari', '~> 1.1.1'
 gem 'ransack'
 gem 'refile', require: 'refile/rails', github: 'manfe/refile'
 gem 'refile-mini_magick'
-group :production do
-  gem 'mysql2'
-end
+# group :production do
+#   gem 'mysql2'
+# end
 gem 'carrierwave'
 gem 'jquery-rails'
