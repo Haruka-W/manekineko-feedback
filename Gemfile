@@ -49,6 +49,7 @@ group :development, :test do
   gem 'capistrano3-puma'
   gem 'ed25519', '>= 1.2', '< 2.0'
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do

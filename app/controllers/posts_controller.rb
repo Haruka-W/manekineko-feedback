@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: %i[new create edit update destroy]
+  #before_action :authenticate_user!, only: %i[new create edit update destroy]
 
   def new
     @post = Post.new

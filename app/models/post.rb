@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Post < ApplicationRecord
+  validates :title, presence: true, length: { minimum: 2, maximum: 30 }
+
   enum sex: {
     "未選択": 0, "オス": 1, "メス": 2
   }, _prefix: true

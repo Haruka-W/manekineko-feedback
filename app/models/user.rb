@@ -17,6 +17,10 @@ class User < ApplicationRecord
     福岡県: 40, 佐賀県: 41, 長崎県: 42, 熊本県: 43, 大分県: 44, 宮崎県: 45, 鹿児島県: 46, 沖縄県: 47
   }
 
+  validates :name, presence: true, length: { minimum: 2, maximum: 20 }
+  validates :handle_name, presence: true, length: { minimum: 2, maximum: 10 }
+  validates :profile, length: { maximum: 200 }
+
   # 募集
   has_many :invites, dependent: :destroy
   has_many :invite_comments, dependent: :destroy
