@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
+    SampleMailer.send_when_update(current_user).deliver
     redirect_to user_path(@user.id)
   end
 
