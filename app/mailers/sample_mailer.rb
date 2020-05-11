@@ -12,4 +12,13 @@ class SampleMailer < ApplicationMailer
     	subject: "会員情報が更新されました。"
     )
   end
+
+  def send_new_comment(user)
+  	@user = user
+    mail(
+    	to: 'wataametoketa@yahoo.co.jp',
+    	subject: "あなたの投稿にコメントがきました。"
+    )
+  end
+
 end

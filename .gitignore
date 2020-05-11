@@ -1,0 +1,3 @@
+/config/master.key
+.env
+/config/environments/development.rb

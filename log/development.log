@@ -53942,3 +53942,261 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 1017ms (Views: 892.1ms | ActiveRecord: 15.7ms)
 
 
+Started GET "/" for 10.0.2.2 at 2020-05-11 11:22:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mInvite Load (1.7ms)[0m  [1m[34mSELECT  "invites".* FROM "invites" ORDER BY "invites"."created_at" DESC LIMIT ?[0m  [["LIMIT", 4]]
+  ↳ app/views/invites/_index.html.erb:2
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/invites/_index.html.erb:16
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/invites/_index.html.erb:16
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/invites/_index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/invites/_index.html.erb:16
+  Rendered invites/_index.html.erb (73.2ms)
+  Rendered homes/top.html.erb within layouts/application (922.7ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+  [1m[36mNotification Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "notifications" WHERE "notifications"."visited_id" = ? AND "notifications"."checked" = ? LIMIT ?[0m  [["visited_id", 4], ["checked", 0], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 1446ms (Views: 1374.4ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/posts" for 10.0.2.2 at 2020-05-11 11:22:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_search_form.html.erb (123.4ms)
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_index.html.erb:2
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_index.html.erb:16
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/_index.html.erb:16
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_index.html.erb:16
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_index.html.erb:16
+  Rendered posts/_index.html.erb (37.0ms)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/index.html.erb within layouts/application (231.7ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+  [1m[36mNotification Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "notifications" WHERE "notifications"."visited_id" = ? AND "notifications"."checked" = ? LIMIT ?[0m  [["visited_id", 4], ["checked", 0], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 397ms (Views: 362.9ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/posts/23" for 10.0.2.2 at 2020-05-11 11:22:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:10
+  [1m[36mFavorite Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."post_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_id", 23], ["user_id", 4], ["LIMIT", 1]]
+  ↳ app/models/post.rb:26
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 23]]
+  ↳ app/views/posts/_favorite.html.erb:10
+  Rendered posts/_favorite.html.erb (27.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:25
+  [1m[36mPostComment Load (1.2ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 23]]
+  ↳ app/views/posts/_comment.html.erb:2
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_comment.html.erb:5
+  Rendered posts/_comment.html.erb (12.1ms)
+  Rendered posts/show.html.erb within layouts/application (70.9ms)
+  [1m[36mNotification Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "notifications" WHERE "notifications"."visited_id" = ? AND "notifications"."checked" = ? LIMIT ?[0m  [["visited_id", 4], ["checked", 0], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 233ms (Views: 191.2ms | ActiveRecord: 12.5ms)
+
+
+Started POST "/posts/23/post_comments" for 10.0.2.2 at 2020-05-11 11:22:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostCommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L9IlSRVplhDlHGK+uVyZAAImfbIpWwX7k0to9MDMo0/VJeFIaJ3nNibsc/AIRYnMEAV19sxcnnic3I5+b3wrEQ==", "post_comment"=>{"comment"=>"コメントテスト"}, "commit"=>"コメントを送信する", "post_id"=>"23"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/post_comments_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/post_comments_controller.rb:10
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/post_comments_controller.rb:10
+  [1m[36mPostComment Create (4.6ms)[0m  [1m[32mINSERT INTO "post_comments" ("user_id", "post_id", "created_at", "updated_at", "comment") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["post_id", 23], ["created_at", "2020-05-11 11:22:49.808820"], ["updated_at", "2020-05-11 11:22:49.808820"], ["comment", "コメントテスト"]]
+  ↳ app/controllers/post_comments_controller.rb:10
+  [1m[35m (11.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/post_comments_controller.rb:10
+  [1m[36mPostComment Load (1.3ms)[0m  [1m[34mSELECT DISTINCT "post_comments"."user_id" FROM "post_comments" WHERE "post_comments"."post_id" = ? AND NOT (user_id=4 or user_id=3)[0m  [["post_id", 23]]
+  ↳ app/models/post.rb:54
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/post.rb:72
+  [1m[36mNotification Create (4.0ms)[0m  [1m[32mINSERT INTO "notifications" ("visitor_id", "visited_id", "post_id", "post_comment_id", "action", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["visitor_id", 4], ["visited_id", 1], ["post_id", 23], ["post_comment_id", 17], ["action", "post_comment"], ["created_at", "2020-05-11 11:22:49.850422"], ["updated_at", "2020-05-11 11:22:49.850422"]]
+  ↳ app/models/post.rb:72
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/post.rb:72
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/post.rb:72
+  [1m[36mNotification Create (3.2ms)[0m  [1m[32mINSERT INTO "notifications" ("visitor_id", "visited_id", "post_id", "post_comment_id", "action", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["visitor_id", 4], ["visited_id", 3], ["post_id", 23], ["post_comment_id", 17], ["action", "post_comment"], ["created_at", "2020-05-11 11:22:49.871813"], ["updated_at", "2020-05-11 11:22:49.871813"]]
+  ↳ app/models/post.rb:72
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/post.rb:72
+  Rendering post_comments/create.js.erb
+  [1m[36mPostComment Load (1.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 23]]
+  ↳ app/views/posts/_comment.html.erb:2
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_comment.html.erb:5
+  Rendered posts/_comment.html.erb (7.1ms)
+  Rendered post_comments/create.js.erb (103.3ms)
+  Rendering sample_mailer/send_new_comment.html.erb within layouts/mailer
+  Rendered sample_mailer/send_new_comment.html.erb within layouts/mailer (6.2ms)
+SampleMailer#send_new_comment: processed outbound mail in 77.0ms
+Completed 500 Internal Server Error in 520ms (Views: 261.2ms | ActiveRecord: 38.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: <h1><%= @user.name %> 様</h1>
+    2: 
+    3: <p>あなたの投稿「<%= @post.title %>」にコメントが来ました。</p>
+  
+app/views/sample_mailer/send_new_comment.html.erb:3:in `_app_views_sample_mailer_send_new_comment_html_erb___3222762661844326335_70271182804320'
+app/mailers/sample_mailer.rb:18:in `send_new_comment'
+app/controllers/post_comments_controller.rb:14:in `create'
+Started GET "/posts/23" for 10.0.2.2 at 2020-05-11 11:23:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:10
+  [1m[36mFavorite Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."post_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_id", 23], ["user_id", 4], ["LIMIT", 1]]
+  ↳ app/models/post.rb:26
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 23]]
+  ↳ app/views/posts/_favorite.html.erb:10
+  Rendered posts/_favorite.html.erb (22.3ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:25
+  [1m[36mPostComment Load (0.7ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 23]]
+  ↳ app/views/posts/_comment.html.erb:2
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_comment.html.erb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_comment.html.erb:5
+  Rendered posts/_comment.html.erb (16.7ms)
+  Rendered posts/show.html.erb within layouts/application (741.8ms)
+  [1m[36mNotification Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "notifications" WHERE "notifications"."visited_id" = ? AND "notifications"."checked" = ? LIMIT ?[0m  [["visited_id", 4], ["checked", 0], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 1090ms (Views: 1021.9ms | ActiveRecord: 17.7ms)
+
+
+Started DELETE "/posts/17/post_comments" for 10.0.2.2 at 2020-05-11 11:23:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostCommentsController#destroy as JS
+  Parameters: {"post_id"=>"17"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mPostComment Load (1.8ms)[0m  [1m[34mSELECT  "post_comments".* FROM "post_comments" WHERE "post_comments"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/post_comments_controller.rb:24
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/post_comments_controller.rb:25
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/post_comments_controller.rb:26
+  [1m[36mNotification Load (0.9ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."post_comment_id" = ? ORDER BY "notifications"."created_at" DESC[0m  [["post_comment_id", 17]]
+  ↳ app/controllers/post_comments_controller.rb:26
+  [1m[36mNotification Destroy (2.9ms)[0m  [1m[31mDELETE FROM "notifications" WHERE "notifications"."id" = ?[0m  [["id", 32]]
+  ↳ app/controllers/post_comments_controller.rb:26
+  [1m[36mNotification Destroy (0.1ms)[0m  [1m[31mDELETE FROM "notifications" WHERE "notifications"."id" = ?[0m  [["id", 31]]
+  ↳ app/controllers/post_comments_controller.rb:26
+  [1m[36mPostComment Destroy (0.9ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 17]]
+  ↳ app/controllers/post_comments_controller.rb:26
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/post_comments_controller.rb:26
+  Rendering post_comments/destroy.js.erb
+  [1m[36mPostComment Load (1.2ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 23]]
+  ↳ app/views/posts/_comment.html.erb:2
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_comment.html.erb:5
+  Rendered posts/_comment.html.erb (9.0ms)
+  Rendered post_comments/destroy.js.erb (94.6ms)
+Completed 200 OK in 331ms (Views: 186.1ms | ActiveRecord: 16.6ms)
+
+
+Started POST "/posts/23/post_comments" for 10.0.2.2 at 2020-05-11 11:23:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostCommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9e2XXZeuSot5zTGka6/GRAAk5kqk0CUF3qXxHu5cc8S3qtbd3TrDV8JRr1iPF4wWRI3i6TPGwsdvq3tQ8javAw==", "post_comment"=>{"comment"=>"コメントテスト"}, "commit"=>"コメントを送信する", "post_id"=>"23"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/post_comments_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/post_comments_controller.rb:10
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/post_comments_controller.rb:10
+  [1m[36mPostComment Create (3.2ms)[0m  [1m[32mINSERT INTO "post_comments" ("user_id", "post_id", "created_at", "updated_at", "comment") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["post_id", 23], ["created_at", "2020-05-11 11:23:50.457699"], ["updated_at", "2020-05-11 11:23:50.457699"], ["comment", "コメントテスト"]]
+  ↳ app/controllers/post_comments_controller.rb:10
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/post_comments_controller.rb:10
+  [1m[36mPostComment Load (3.1ms)[0m  [1m[34mSELECT DISTINCT "post_comments"."user_id" FROM "post_comments" WHERE "post_comments"."post_id" = ? AND NOT (user_id=4 or user_id=3)[0m  [["post_id", 23]]
+  ↳ app/models/post.rb:54
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/post.rb:72
+  [1m[36mNotification Create (4.1ms)[0m  [1m[32mINSERT INTO "notifications" ("visitor_id", "visited_id", "post_id", "post_comment_id", "action", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["visitor_id", 4], ["visited_id", 1], ["post_id", 23], ["post_comment_id", 18], ["action", "post_comment"], ["created_at", "2020-05-11 11:23:50.485260"], ["updated_at", "2020-05-11 11:23:50.485260"]]
+  ↳ app/models/post.rb:72
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/post.rb:72
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/post.rb:72
+  [1m[36mNotification Create (4.7ms)[0m  [1m[32mINSERT INTO "notifications" ("visitor_id", "visited_id", "post_id", "post_comment_id", "action", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["visitor_id", 4], ["visited_id", 3], ["post_id", 23], ["post_comment_id", 18], ["action", "post_comment"], ["created_at", "2020-05-11 11:23:50.503482"], ["updated_at", "2020-05-11 11:23:50.503482"]]
+  ↳ app/models/post.rb:72
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/post.rb:72
+  Rendering post_comments/create.js.erb
+  [1m[36mPostComment Load (0.8ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 23]]
+  ↳ app/views/posts/_comment.html.erb:2
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_comment.html.erb:5
+  Rendered posts/_comment.html.erb (8.0ms)
+  Rendered post_comments/create.js.erb (79.8ms)
+  Rendering sample_mailer/send_new_comment.html.erb within layouts/mailer
+  Rendered sample_mailer/send_new_comment.html.erb within layouts/mailer (0.5ms)
+SampleMailer#send_new_comment: processed outbound mail in 184.9ms
+Sent mail to wataametoketa@yahoo.co.jp (4472.7ms)
+Date: Mon, 11 May 2020 11:23:51 +0000
+From: nekonoko1995@gmail.com
+To: wataametoketa@yahoo.co.jp
+Message-ID: <5eb935c76fb8_6d152af57ff1d63856461@ubuntu-bionic.mail>
+Subject: =?UTF-8?Q?=E3=81=82=E3=81=AA=E3=81=9F=E3=81=AE=E6=8A=95=E7=A8=BF=E3=81=AB=E3=82=B3=E3=83=A1=E3=83=B3=E3=83=88=E3=81=8C=E3=81=8D=E3=81=BE=E3=81=97=E3=81=9F=E3=80=82?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIDxoMT7muKHpgormmbTpppkg
+5qeYPC9oMT4NCg0KPHA+44GC44Gq44Gf44Gu5oqV56i/44Gr44Kz44Oh44Oz
+44OI44GM5p2l44G+44GX44Gf44CCPC9wPg0KDQogIDwvYm9keT4NCjwvaHRt
+bD4NCg==
+
+Completed 200 OK in 5065ms (Views: 235.6ms | ActiveRecord: 31.6ms)
+
+

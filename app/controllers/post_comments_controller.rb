@@ -11,6 +11,7 @@ class PostCommentsController < ApplicationController
       flash.now[:success] = 'コメントしました。'
       @post.create_notification_comment!(current_user, @post_comment.id)
       render 'create'
+      SampleMailer.send_new_comment(current_user).deliver
       # redirect_to post_path(@post)
     else
       flash.now[:danger] = 'コメントを入力してください。'
